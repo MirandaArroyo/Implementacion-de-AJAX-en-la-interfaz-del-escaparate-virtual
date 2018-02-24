@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejemplo</title>
+    <meta name="description" content="Maquillaje">
+    <!--etiqueta para que sea adaptativa la pagina-->  
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- estilos CSS-->  
+    <!--Importar Iconos-->
+    <link rel="stylesheet" href="fonts/web-fonts-with-css/css/fontawesome-all.css"/>
+    <!--Importar librerias JQuery-->
+    <script src="Js/jquery-3.2.1.js"></script>
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <body>
+    <!--Contenedor global de 12 columnas-->
+    <div class="container">
+        <input type="search" class="form-control" id="search"/><br/>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>nombre</th>
+                    <th>precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div> 
+    <!--Importacion de scripts-->
+    <script src="Js/carrusel.js"></script>
+    <script src="Js/flecha.js"></script>
+    <script src="Js/cookies.js"></script>
+    <script src="Js/scroll.js"></script>  
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $("#search").keydown(function(){
+            $.getJSON("http://localhost:3000/productos", function(data){
+                var search = $("#search").val();
+                var regEx = new RegExp(search, 'i');
+                var output;
+                $.each(data, funtion(key, val){
+                       if((val.nombre.search(regEx) !=-1)||(val.precio.search(regEx) !=-1)){
+                       output+="<tr>"
+                       output+="<td id='"+key+"'>"+val.nombre+"</td>"
+                       output+="<td id='"+key+"'>"+val.precio+"</td>"
+                       output+="</tr>"
+                       }
+                    });
+                $("tbody").html(output)
+            });
+        })
+    </script>
+  </body>
+</html>      
+  
