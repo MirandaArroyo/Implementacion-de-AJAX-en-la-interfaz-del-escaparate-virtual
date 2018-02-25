@@ -7,21 +7,23 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
+      <style>
+          .borde{border: 1px solid;}
+          .imagenes{width: 100%; }
+      </style>
       <link rel="stylesheet" href="css/estilosSas.css"/>
       <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <title>Konbini online</title>
   </head>
-  
-      
     <body>
-        <div class="container  ">
+        <div class="container ">
             <header class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-5 col-5  ">
+                    <div class="col-lg-3 col-md-5 col-5">
                         <img class="img-fluid" src="imagenes/logo.png" alt=""/>
                     </div>
-                    <div class="  col-lg-1 col-md-1 d-none d-md-block"><p></p></div>
-                    <div class="col-lg-8 col-md-6 col-7  ">
+                    <div class="col-lg-1 col-md-1 d-none d-md-block"><p></p></div>
+                    <div class="col-lg-8 col-md-6 col-7">
                         <div class="fondoCabecera">
                             <div class="row justify-content-end opciones ">
                                <div class="col-lg-6 col-12">
@@ -35,8 +37,8 @@
                     </div>
                 </div>
             </header>
-            <nav>
-                <div class="espacioMenu col-lg-12">
+            <nav><!--https://getbootstrap.com/docs/4.0/components/navbar/-->
+                <div class="espacioMenu col-lg-12 d-none d-md-block">
                     <ul class="nav nav-pills nav-fill">
                       <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
@@ -57,51 +59,23 @@
                 </div>
             </nav>
             <div class="container">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="">Dulces</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Taiyaki</li>
-                  </ol>
-                </nav>
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-md-5 col-sm-7 col-10">
-                        <div class="imagenProducto justify-content-center">
-                            <img src="imagenes/productos/taiyaki.jpg"/>
-                            <div class="row justify-content-center">
-                            <div class="col-lg-2 col-md-2 col-2 iconosImagen">
-                                <i class="fa fa-heart img-fluid" onclick="likes()">6</i>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-2 iconosImagen">
-                                <i class="fa fa-star img-fluid" aria-hidden="true" onclick="favorito()">2</i>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-2 iconosImagen">
-                                <i class="fa fa-comment img-fluid" aria-hidden="true">3</i>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-2 iconosImagen">
-                                <i class="fa fa-share-alt img-fluid" aria-hidden="true"></i>
-                            </div>
-                            </div>
-                        </div>
+                        <div class="formularioSesion">
+                        <div class="cabeceraFormulario">Formulario de registro</div>
+                        <form class="formInicio"
+                              method="post" action='#'  onsubmit="return confirmaCookie()" >
+                            <label for="nombre2">Nombre: </label>
+                            <input type="text" id="nombre2"/>
+                            <br>
+                            <label for="pass">Contrase&ntilde;a: </label>
+                            <input type="password" id="pass"/>
+                            <br><br>
+                            <input type="submit" id="enviar" value="Enviar"/>
+                            <br><br>
+                             <a>¿No tienes cuenta? registrate</a> <a  href="registro.html">aqui</a>
+                        </form>
                     </div>
-                    <div class="col-lg-5 col-md-6  ">
-                        <div class="row">
-                        <div class="col-lg-12 comprar">
-                            <p>Taiyaki</p>
-                        </div>
-                        <div class="col-lg-12 comprar">
-                            <p class="des">Delicioso bollo japones relleno de chocolate</p>
-                        </div>
-                            <div class="col-lg-12 comprar">
-                            <form>
-                                <label>Unidades:</label>
-                                <input type="number" class="unidades">
-                            </form>
-                        </div>
-                        <div class="col-lg-12 comprar">
-                            <input type="submit" id="enviar" value="Añadir al carrito"/>
-                        </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -135,15 +109,14 @@
                     
                 </div>
             </footer>
-        </div> 
+     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/bootstrap.js"></script>
-        <script type='text/javascript' src="js/jquery-3.2.1.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-        <script type="text/javascript" src="js/animacionScroll.js"></script>
+        <script type='text/javascript' src="js/jquery-3.2.1.js"></script><script type="text/javascript" src="js/scriptormulario.js"></script>
+        <script type="text/javascript" src="js/cifradoContrasenia.js"></script>
   </body>
 </html>
